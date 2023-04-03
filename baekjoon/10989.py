@@ -1,16 +1,29 @@
-from collections import defaultdict
-num_dict = defaultdict(lambda : 0)
+import sys
+input = sys.stdin.readline
+
 N = int(input())
-
-for i in range(N):
+nums_vec = [0 for _ in range(10001)]
+for _ in range(N):
     number = int(input())
-    num_dict[number] += 1
+    nums_vec[number] += 1
 
-nums = list(num_dict.keys())
-nums.sort()
-sorted_dict = {i : num_dict[i] for i in nums}
+num = 0
+while(N != 0):
+    if nums_vec[num] != 0:
+        cnt = nums_vec[num]
+        for _ in range(cnt):
+            print(num)
+        N -= cnt
+    num += 1
+        
 
-for num in nums:
-    cnt = num_dict[num]
-    for i in range(cnt):
-        print(num)
+
+
+# num = 0
+# while (sum(nums_vec) != 0):
+#     if nums_vec[num] != 0:
+#         cnt = nums_vec[num]
+#         nums_vec[num] = 0
+#         for _ in range(cnt):
+#             print(num)
+#     num += 1
