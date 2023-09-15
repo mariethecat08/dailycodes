@@ -1,5 +1,4 @@
 pole = int(input())
-#lengths = [64,32,16,8,4,2,1]
 n = 64
 count = 0
 while pole != 0:
